@@ -1,9 +1,5 @@
 type: edu
 files:
-- name: hacking/hack.py
-  visible: true
-  text: '# write your code here'
-  learner_created: false
 - name: test/__init__.py
   visible: false
   learner_created: false
@@ -114,6 +110,10 @@ files:
     from test.tests import Hacking
 
     if __name__ == '__main__':    test = Hacking('hacking.hack')    test.run_tests()    test.stop_server()
+  learner_created: false
+- name: hacking/hack.py
+  visible: true
+  text: '# write your code here'
   learner_created: false
 feedback_link: https://hyperskill.org/projects/80/stages/442/implement#comment
 status: Unchecked
