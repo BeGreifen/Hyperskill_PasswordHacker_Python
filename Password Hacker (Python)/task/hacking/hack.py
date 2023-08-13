@@ -38,8 +38,7 @@ def set_args():
 @logger
 def get_args() -> argparse:
     parser = set_args()
-    parser.parse_args()
-    return parser
+    return parser.parse_args()
 
 
 @logger
@@ -58,8 +57,7 @@ def send_message_and_get_response(hostname: str, port: int, message: str) -> soc
 
 @logger
 def main():
-    parser = get_args()
-    args = parser.parse_args()
+    args = get_args()
     ans = send_message_and_get_response(args.ip_address,
                                         args.port,
                                         args.message)
