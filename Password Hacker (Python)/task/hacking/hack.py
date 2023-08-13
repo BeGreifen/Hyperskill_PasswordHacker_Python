@@ -32,7 +32,7 @@ def set_args():
                         help="like localhost or 127.0.0.1")
     parser.add_argument("port", type=int,
                         help="like 8080")
-    parser.add_argument("message", type=str,
+    parser.add_argument("message", nargs="*",
                         help="string that you want to send, like this is a test",
                         default="")
     return parser
@@ -45,7 +45,7 @@ def get_args() -> argparse:
 
 
 @logger
-def send_message_and_get_response(hostname: str, port: int, message: str) -> socket:
+def send_message_and_get_response(hostname: str, port: int, message: str = "") -> socket:
     with socket.socket() as client_socket:
         address = (hostname, port)
         client_socket.connect(address)
@@ -62,8 +62,7 @@ def send_message_and_get_response(hostname: str, port: int, message: str) -> soc
 def main():
     args = get_args()
     ans = send_message_and_get_response(args.ip_address,
-                                        args.port,
-                                        args.message)
+                                        args.port)
     print(ans)
 
 
