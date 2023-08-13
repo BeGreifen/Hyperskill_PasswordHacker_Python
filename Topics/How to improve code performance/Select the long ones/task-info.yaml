@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: "words = [...]"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17099#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 13 Aug 2023 14:17:39 UTC"
+record: -1
+submission_language: python3

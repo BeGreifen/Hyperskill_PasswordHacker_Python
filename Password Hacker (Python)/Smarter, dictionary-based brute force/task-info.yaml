@@ -143,6 +143,19 @@ files:
 
     if __name__ == '__main__':    test = Hacking('hacking.hack')    test.run_tests()    test.stop_server()
   learner_created: false
+- name: app.log
+  visible: true
+  text: |
+    2023-08-13 14:50:46,759 - INFO - main - line no: 88 with args: (), kwargs: {}
+    2023-08-13 14:50:46,760 - INFO - get_args - line no: 76 with args: (), kwargs: {}
+    2023-08-13 14:50:46,761 - INFO - set_args - line no: 43 with args: (), kwargs: {}
+    2023-08-13 14:50:46,761 - INFO - set_args returned: ArgumentParser(prog='hack.py', usage=None, description='Commandline inputs to start Hacking Password script.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+    2023-08-13 14:50:46,761 - INFO - get_args returned: Namespace(ip_address='localhost', message='', port=9090)
+    2023-08-13 14:50:46,762 - INFO - send_message_and_get_response - line no: 77 with args: ('localhost', 9090), kwargs: {}
+    2023-08-13 14:50:48,878 - INFO - ['password:', '60g', 'message:', b'60g', 'response:', 'Connection success!']
+    2023-08-13 14:50:48,878 - INFO - send_message_and_get_response returned: 60g
+    2023-08-13 14:50:48,878 - INFO - main returned: None
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/80/stages/444/implement#comment
 status: Unchecked
 record: -1
