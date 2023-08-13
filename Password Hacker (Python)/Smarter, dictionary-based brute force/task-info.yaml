@@ -156,6 +156,12 @@ files:
     2023-08-13 14:50:48,878 - INFO - send_message_and_get_response returned: 60g
     2023-08-13 14:50:48,878 - INFO - main returned: None
   learner_created: true
+- name: passwords.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/80/stages/444/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 13 Aug 2023 21:21:47 UTC"
 record: -1
