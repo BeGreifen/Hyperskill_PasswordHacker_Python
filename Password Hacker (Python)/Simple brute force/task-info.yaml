@@ -134,6 +134,28 @@ files:
 
     if __name__ == '__main__':    test = Hacking('hacking.hack')    test.run_tests()    test.stop_server()
   learner_created: false
+- name: hacking/app.log
+  visible: true
+  text: |
+    2023-08-13 13:25:31,692 - INFO - main - line no: 73 with args: (), kwargs: {}
+    2023-08-13 13:25:31,693 - INFO - get_args - line no: 60 with args: (), kwargs: {}
+    2023-08-13 13:25:31,693 - INFO - set_args - line no: 40 with args: (), kwargs: {}
+    2023-08-13 13:25:31,694 - INFO - set_args returned: ArgumentParser(prog='hack.py', usage=None, description='Commandline inputs to start Hacking Password script.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+    2023-08-13 13:25:31,695 - INFO - get_args returned: Namespace(ip_address='localhost', message='password', port=9090)
+    2023-08-13 13:25:31,695 - INFO - send_message_and_get_response - line no: 61 with args: ('localhost', 9090, 'password'), kwargs: {}
+  learner_created: true
+- name: app.log
+  visible: true
+  text: |
+    2023-08-13 13:26:25,289 - INFO - main - line no: 73 with args: (), kwargs: {}
+    2023-08-13 13:26:25,289 - INFO - get_args - line no: 60 with args: (), kwargs: {}
+    2023-08-13 13:26:25,289 - INFO - set_args - line no: 40 with args: (), kwargs: {}
+    2023-08-13 13:26:25,290 - INFO - set_args returned: ArgumentParser(prog='hack.py', usage=None, description='Commandline inputs to start Hacking Password script.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+    2023-08-13 13:26:25,290 - INFO - get_args returned: Namespace(ip_address='localhost', message='7y', port=9090)
+    2023-08-13 13:26:25,290 - INFO - send_message_and_get_response - line no: 61 with args: ('localhost', 9090, '7y'), kwargs: {}
+    2023-08-13 13:26:25,291 - INFO - send_message_and_get_response returned: Wrong password!
+    2023-08-13 13:26:25,292 - INFO - main returned: None
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/80/stages/443/implement#comment
 status: Unchecked
 record: -1
