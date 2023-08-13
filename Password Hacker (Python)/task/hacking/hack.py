@@ -44,18 +44,31 @@ def get_args() -> argparse:
     return parser.parse_args()
 
 
+# @logger
+def get_brute_force_pass(length: int = 6):
+    char_list = string.ascii_lowercase + string.digits
+    for i in range(1, length + 1):
+        for combo in itertools.product(char_list, repeat=i):
+            yield ''.join(combo)
+
+
 @logger
 def send_message_and_get_response(hostname: str, port: int, message: str = "") -> socket:
     with socket.socket() as client_socket:
         address = (hostname, port)
         client_socket.connect(address)
-
-        message = message.encode()
-        client_socket.send(message)
-
-        response = client_socket.recv(port)
-        response = response.decode()
-        return response
+        found_pass = False
+        for password in get_brute_force_pass():
+            message = password.encode()
+            client_socket.send(message)
+            response = client_socket.recv(1024)
+            response = response.decode()
+            if response in "Connection success!":
+                logging.info(["password:", password, "message:", message, "response:", response])
+                return password
+            elif response in "Too many attempts":
+                logging.info([password, message, response])
+                return response
 
 
 @logger
