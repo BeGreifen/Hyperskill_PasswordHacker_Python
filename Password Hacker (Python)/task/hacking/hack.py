@@ -1,10 +1,29 @@
 import argparse
 import socket
+import logging
+import inspect
 
 
 # write your code here
+def logger(func):
+    def wrap(*args, **kwargs):
+        logging.info(
+            f"{func.__name__} - line no: {inspect.getframeinfo(inspect.currentframe().f_back).lineno} with args: {args}, kwargs: {kwargs}")
+        # Log the function name and arguments
+
+        # Call the original function
+        result = func(*args, **kwargs)
+
+        # Log the return value
+        logging.info(f"{func.__name__} returned: {result}")
+
+        # Return the result
+        return result
+
+    return wrap
 
 
+@logger
 def set_args():
     parser = argparse.ArgumentParser(description="Commandline inputs to start Hacking Password script.")
     parser.add_argument("ip_address", type=str,
@@ -16,12 +35,14 @@ def set_args():
     return parser
 
 
+@logger
 def get_args() -> argparse:
     parser = set_args()
     parser.parse_args()
     return parser
 
 
+@logger
 def send_message_and_get_response(hostname: str, port: int, message: str) -> socket:
     with socket.socket() as client_socket:
         address = (hostname, port)
