@@ -56,6 +56,7 @@ def send_message_and_get_response(hostname: str, port: int, message: str) -> soc
         return response
 
 
+@logger
 def main():
     parser = get_args()
     args = parser.parse_args()
@@ -66,4 +67,9 @@ def main():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO,
+                        format='%(asctime)s - %(levelname)s - %(message)s',
+                        filename='app.log',  # Specify the file name for logging
+                        filemode='w'  # Use 'w' mode to overwrite the log file on each run, or 'a' to append
+                        )
     main()
