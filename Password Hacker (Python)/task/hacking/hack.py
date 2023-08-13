@@ -1,5 +1,7 @@
 import argparse
 import socket
+import itertools
+import string
 import logging
 import inspect
 
@@ -31,7 +33,8 @@ def set_args():
     parser.add_argument("port", type=int,
                         help="like 8080")
     parser.add_argument("message", type=str,
-                        help="string that you want to send, like this is a test")
+                        help="string that you want to send, like this is a test",
+                        default="")
     return parser
 
 
