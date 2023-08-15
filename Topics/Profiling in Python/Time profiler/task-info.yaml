@@ -1,0 +1,25 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  highlight_level: NONE
+  text: |-
+    from time import time
+
+    def catalan(n):
+        if n <= 1:
+            return 1
+        res = 0
+        for i in range(n):
+            res += catalan(i) * catalan(n-i-1)
+        return res
+
+    # start the timer
+    for i in range(16):
+        catalan(i)
+    # end timer and save the message
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17433#comment
+status: Unchecked
+record: -1
+submission_language: python3

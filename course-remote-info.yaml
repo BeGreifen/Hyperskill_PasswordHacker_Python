@@ -4,7 +4,7 @@ hyperskill_project:
   is_template_based: false
   use_ide: true
   environment: unittest
-update_date: "Sun, 13 Aug 2023 17:49:43 UTC"
+update_date: "Tue, 15 Aug 2023 12:31:08 UTC"
 stages:
 - id: 442
   step: 7216
@@ -17,7 +17,7 @@ stages:
   is_completed: true
 - id: 445
   step: 7219
-  is_completed: false
+  is_completed: true
 - id: 446
   step: 7220
   is_completed: false
@@ -81,10 +81,10 @@ topics:
     theory_id: 6230
   - title: Virtual Environment
     theory_id: 13923
-  - title: Unicode
-    theory_id: 7899
   - title: For loop
     theory_id: 6065
+  - title: Unicode
+    theory_id: 7899
   - title: PyCharm basics
     theory_id: 6193
   - title: Elif statement
@@ -171,12 +171,12 @@ topics:
     theory_id: 6037
   - title: Arguments
     theory_id: 7248
+  - title: Basic string methods
+    theory_id: 6842
   - title: Operations with list
     theory_id: 6031
   - title: Escape sequences
     theory_id: 7130
-  - title: Basic string methods
-    theory_id: 6842
   - title: Split and join
     theory_id: 6972
   - title: Dictionary

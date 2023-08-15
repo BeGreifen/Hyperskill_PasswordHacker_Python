@@ -141,7 +141,7 @@ def get_dict_pass(hostname, port) -> dict:
         try:
             client_socket.connect(address)
         except Exception as e:
-            logging.info("try to connect after credentials were found. %s",e)
+            logging.info("try to connect after credentials were found. %s", e)
             exit()
         # search for login
         login_found = False
@@ -204,7 +204,6 @@ def main():
     # ans = send_message_and_get_response(args.ip_address,
     #                                     args.port)
     # ans = get_dict_pass(args.ip_address, args.port)
-    get_typical_credential_files()
     ans = get_dict_pass(args.ip_address, args.port)
     print(json.dumps(ans))
 

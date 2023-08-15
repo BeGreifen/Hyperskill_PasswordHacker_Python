@@ -156,7 +156,7 @@ files:
     2023-08-13 13:26:25,291 - INFO - send_message_and_get_response returned: Wrong password!
     2023-08-13 13:26:25,292 - INFO - main returned: None
   learner_created: true
-feedback_link: https://hyperskill.org/projects/80/stages/443/implement#comment
+feedback_link: https://hyperskill.org/learn/step/7217#comment
 status: Solved
 feedback:
   message: Congratulations!

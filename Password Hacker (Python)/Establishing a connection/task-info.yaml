@@ -121,7 +121,7 @@ files:
 - name: app.log
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/80/stages/442/implement#comment
+feedback_link: https://hyperskill.org/learn/step/7216#comment
 status: Solved
 feedback:
   message: Congratulations!
