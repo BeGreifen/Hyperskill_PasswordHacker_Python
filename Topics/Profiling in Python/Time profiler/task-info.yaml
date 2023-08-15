@@ -20,6 +20,9 @@ files:
     # end timer and save the message
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/17433#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 15 Aug 2023 12:50:48 UTC"
 record: -1
 submission_language: python3
