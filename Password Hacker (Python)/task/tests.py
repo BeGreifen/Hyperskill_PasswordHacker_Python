@@ -1,3 +1,3 @@
-from test.tests import Hacking
+from test.tests import TimeVulnerability
 
-if __name__ == '__main__':    test = Hacking('hacking.hack')    test.run_tests()    test.stop_server()
+if __name__ == '__main__':    test = TimeVulnerability('hacking.hack')    test.run_tests()    test.stop_server()
